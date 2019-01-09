@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Надя Прокопьева</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="bootstrap/bootstrap-grid.min.css" rel="stylesheet">
+  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-300.woff2 as="font">
+  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-300.woff"" as="font">
+  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-regular.woff2" as="font">
+  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-regular.woff" as="font">
+  <link rel="preload" href="fonts/pattaya-v3-latin_cyrillic-regular.woff2" as="font">
+  <link rel="preload" href="fonts/pattaya-v3-latin_cyrillic-regular.woff" as="font">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="main-nav" id="main-nav">
+      <button class="main-nav__toggle" type="button"aria-label="открыть меню"><svg class="icon" width="30" height="30"><use xlink:href="img/sprite.svg#icon-menu"></use></svg></button>
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a href="#portfolio">Мои работы</a></li>
+        <li class="main-nav__item"><a href="#skills">Технологии</a></li>
+        <li class="main-nav__item"><a href="#about-me">Обо мне</a></li>
+        <li class="main-nav__item"><a href="#get-in-touch">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1 class="visually-hidden">портфолио HTML-верстальщикa</h1>
+    <section class="section intro">
+      <div class="intro__wrapper">
+        <div class="intro__column">
+          <span class="intro__text">Привет! Меня зовут</span>
+          <span class="intro__title">Надя Прокопьева</span>
+        </div>
+        <div class="intro__cover"><img src="img/laptop.svg" alt=""></div>
+        <div class="intro__column">
+          <span class="intro__desc">Я начинающий HTML-верстальщик<br>и Front-end разработчик</span>
+        </div>
+      </div>
+    </section>
+    <section class="section portfolio" id="portfolio">
+      <div class="wrapper">
+        <h2 class="title title--section">Мои работы</h2>
+        <ul class="list portfolio__list row">
+          <li class="portfolio__item col-sm-6">
+            <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/gllacy" target="_blank">
+              <img src="img/gllacy.jpg" width="500" height="265" alt="Ice-cream shop Gllacy">
+              <span class="portfolio__info">Gllacy</span>
+            </a>
+          </li>
+          <li class="portfolio__item col-sm-6">
+            <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/sedona" target="_blank">
+              <img src="img/sedona.jpg" width="500" height="265" alt="Website of the city Sedona">
+              <span class="portfolio__info">Sedona</span>
+            </a>
+          </li>
+          <li class="portfolio__item col-sm-6">
+            <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/nerds" target="_blank">
+              <img src="img/nerds.jpg" width="500" height="265" alt="Studio Nerds">
+              <span class="portfolio__info">Nerds</span>
+            </a>
+          </li>
+          <li class="portfolio__item col-sm-6">
+            <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/mishka" target="_blank">
+              <img src="img/mishka.png" width="500" height="265" alt="Toy Store Mishka">
+              <span class="portfolio__info">Mishka</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section about-me" id="about-me">
+      <div class="wrapper">
+        <h2 class="title title--section">Обо мне</h2>
+        <ul class="list about-me__list row">
+          <li class="about-me__item col-sm-4">разрабатываю фиксированную, адаптивную, резиновую верстку по PSD макетам с возможностью посадки на CMS</li>
+          <li class="about-me__item col-sm-4">тестирую код валидность и сайт на кроссбраузерность</li>
+          <li class="about-me__item col-sm-4">использую средства автоматизации рабочего процесса и оптимизации кода</li>
+          <li class="about-me__item col-sm-4">следую БЭМ-методологии и стандарту доступности</li>
+          <li class="about-me__item col-sm-4">проверяю соответствие макету c помощью pixel perfect</li>
+          <li class="about-me__item col-sm-4">стремлюсь к получению новых знаний и навыков</li>
+        </ul>
+      </div>
+    </section>
+    <section class="section skills" id="skills">
+      <div class="wrapper">
+        <h2 class="title title--section">Технологии</h2>
+        <ul class="skills__list list row">
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-photoshop"></use></svg>
+              <span class="skills__info">Photoshop</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-html-5"></use></svg>
+              <span class="skills__info">HTML 5</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
+              <span class="skills__info">Git</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-css"></use></svg>
+              <span class="skills__info">CSS</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-java"></use></svg>
+              <span class="skills__info">JavaScript</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-gulp"></use></svg>
+              <span class="skills__info">Gulp</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-sass"></use></svg>
+              <span class="skills__info">Sass</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-less"></use></svg>
+              <span class="skills__info">Less</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-bootstrap"></use></svg>
+              <span class="skills__info">Bootstrap</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-pug"></use></svg>
+              <span class="skills__info">Pug</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-illustrator"></use></svg>
+              <span class="skills__info">Illustrator</span>
+            </div>
+          </li>
+          <li class="col-sm-3">
+            <div class="skills__item">
+              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-wordpress"></use></svg>
+              <span class="skills__info">Wordpress</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="section contacts" id="get-in-touch">
+      <div class="wrapper contacts__wrapper">
+        <h2 class="title contacts__title">Контакты</h2>
+        <p class="contacts__text">Вы всегда можете связаться со мной любым удобным для Вас способом:</p>
+        <ul class="contacts__list list">
+          <li class="contacts__item col-sm-6">
+            <div class="contacts__link">
+              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-phone"></use></svg>
+              <span>+86 136 1293 4750</span>
+            </div>
+          </li>
+          <li class="contacts__item col-sm-6">
+            <a title="электронная почта" target="_blank" class="contacts__link" href="mailto:ndprokopyeva@gmail.com" target="_blank">
+              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-email"></use></svg>
+              <span>ndprokopyeva@gmail.com</span>
+            </a>
+          </li>
+          <li class="contacts__item col-sm-6">
+            <a title="wechat" target="_blank" class="contacts__link" href="weixin://contacts/profile/magklax">
+              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-wechat"></use></svg>
+              <span>magklax</span>
+            </a>
+          </li>
+          <li class="contacts__item col-sm-6">
+            <a title="телеграм" target="_blank" class="contacts__link" href="tg://resolve?domain=magklax">
+              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-telegram"></use></svg>
+              <span>@magklax</span>
+            </a>
+          </li>
+          <li class="contacts__item col-sm-6">
+            <a title="мессенджер" target="_blank" href="m.me/magklax" class="contacts__link">
+              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-messenger"></use></svg>
+              <span>magklax</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="section social">
+    <div class="wrapper social__wrapper">
+      <p class="social__text">Давайте дружить!</p>
+      <ul class="social__list">
+        <li>
+          <a href="https://github.com/magklax" class="social__btn" aria-label="GitHub">
+            <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-github-f"></use></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/prokopjeva" class="social__btn" aria-label="Facebook">
+            <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-fb"></use></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://vk.com/nadejdd" class="social__btn" aria-label="Vkontakte">
+            <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-vk"></use></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <a class="top__btn--hide" id="top-btn" href="#top" aria-label="Вверх">
+    <span>
+      <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-top-btn"></use></svg>
+    </span>
+  </a> -->
+<!-- <div>Icons made by
+  <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>n<a href="https://pngtree.com/free-icon">free icons</a> from pngtree.com
+</div> -->
+  <script src="js/svg4everybody.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
