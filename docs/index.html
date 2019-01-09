@@ -17,7 +17,7 @@
 </head>
 <body>
   <header class="main-header">
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <button class="main-nav__toggle" type="button"aria-label="открыть меню"><svg class="icon" width="30" height="30"><use xlink:href="img/sprite.svg#icon-menu"></use></svg></button>
       <ul class="main-nav__list">
         <li class="main-nav__item"><a href="#portfolio">Мои работы</a></li>
@@ -29,7 +29,7 @@
   </header>
   <main>
     <h1 class="visually-hidden">портфолио HTML-верстальщикa</h1>
-    <section class="section intro" id="top">
+    <section class="section intro">
       <div class="intro__wrapper">
         <div class="intro__column">
           <span class="intro__text">Привет! Меня зовут</span>
@@ -225,9 +225,11 @@
       </ul>
     </div>
   </footer>
-  <!-- <a class="top__btn" href="#top" aria-label="Вверх">
-    <svg width="40" height="40"><use xlink:href="img/sprite.svg#icon-top-btn"></use></svg>
-  </a> -->
+  <a class="top__btn--hide" id="top-btn" href="#top" aria-label="Вверх">
+  <span>
+    <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-top-btn"></use></svg>
+  </span>
+</a> -->
 <!--   <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"           title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 <a href="https://pngtree.com/free-icon">free icons</a> from pngtree.com -->
   <script src="js/svg4everybody.min.js"></script>
