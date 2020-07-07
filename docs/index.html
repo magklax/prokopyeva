@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <link href="css/style.css" rel="stylesheet">
-  <link href="bootstrap/bootstrap-grid.min.css" rel="stylesheet">
-  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-300.woff2 as="font">
-  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-300.woff" as="font">
-  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-regular.woff2" as="font">
-  <link rel="preload" href="fonts/montserrat-v12-latin_cyrillic-regular.woff" as="font">
-  <link rel="preload" href="fonts/pattaya-v3-latin_cyrillic-regular.woff2" as="font">
-  <link rel="preload" href="fonts/pattaya-v3-latin_cyrillic-regular.woff" as="font">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="shortcut icon" href="/img/robot.svg" type="image/x-icon">
+  <link rel="preload" href="fonts/montserrat-300.woff2" as="font">
+  <link rel="preload" href="fonts/montserrat-300.woff" as="font">
+  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font">
+  <link rel="preload" href="fonts/montserrat-regular.woff" as="font">
+  <link rel="preload" href="fonts/pattaya-regular.woff2" as="font">
+  <link rel="preload" href="fonts/pattaya-regular.woff" as="font">
+  <script src="js/svg4everybody.min.js"></script>
 </head>
 <body>
-  <header class="main-header">
+  <header class="main-header" id="top">
     <nav class="main-nav" id="main-nav">
-      <button class="main-nav__toggle" type="button"aria-label="открыть меню"><svg class="icon" width="30" height="30"><use xlink:href="img/sprite.svg#icon-menu"></use></svg></button>
+      <button class="main-nav__toggle" type="button" aria-label="открыть меню"><span class="main-nav__icon"></span></button>
       <ul class="main-nav__list">
         <li class="main-nav__item"><a href="#portfolio">Мои работы</a></li>
         <li class="main-nav__item"><a href="#skills">Технологии</a></li>
@@ -28,8 +28,8 @@
     </nav>
   </header>
   <main>
-    <h1 class="visually-hidden">портфолио HTML-верстальщикa</h1>
     <section class="section intro">
+      <h1 class="visually-hidden">портфолио HTML-верстальщикa</h1>
       <div class="intro__wrapper">
         <div class="intro__column">
           <span class="intro__text">Привет! Меня зовут</span>
@@ -44,196 +44,200 @@
     <section class="section portfolio" id="portfolio">
       <div class="wrapper">
         <h2 class="title title--section">Мои работы</h2>
-        <ul class="list portfolio__list row">
-          <li class="portfolio__item col-sm-6">
-            <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/gllacy" target="_blank">
-              <img src="img/gllacy.jpg" width="500" height="265" alt="Ice-cream shop Gllacy">
-              <span class="portfolio__info">Gllacy</span>
+        <div class="portfolio__block block">
+          <figure class="portfolio__item">
+            <a href="https://magklax.github.io/kotejka/" target="_blank">
+              <img src="img/kotejka@mobile.jpg" alt="Отель для котов и кошек Котейка" width="298" height="298">
             </a>
-          </li>
-          <li class="portfolio__item col-sm-6">
-            <a class="portfolio__link" href="https://lostatvenue.com" target="_blank">
-              <img src="img/lostatvenue.jpg" width="500" height="265" alt="Lost At Venue">
-              <span class="portfolio__info">Lost At Venue</span>
+            <figcaption class="portfolio__info">
+              <span >Отель для котов и кошек</span><br>
+              <span class="big">Котейка</span><br>
+              <a class="portfolio__link" href="https://magklax.github.io/kotejka/" target="_blank">Узнать больше</a>
+            </figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <a href="https://magklax.github.io/prokopyeva/gllacy/" target="_blank">
+              <img src="img/gllacy@mobile.jpg" alt="Магазин мороженого Глейси" width="298" height="298">
             </a>
-          </li>
-          <li class="portfolio__item col-sm-6">
-            <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/nerds" target="_blank">
-              <img src="img/nerds.jpg" width="500" height="265" alt="Studio Nerds">
-              <span class="portfolio__info">Nerds</span>
+            <figcaption class="portfolio__info">
+              <span>Магазин мороженого</span><br>
+              <span class="big">Глейси</span><br>
+              <a class="portfolio__link" href="https://magklax.github.io/gllacy/" target="_blank">Узнать больше</a>
+            </figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <a href="https://lostatvenue.com" target="_blank">
+              <img src="img/lostatvenue@mobile.jpg" alt="Сайт о музыке и путешествиях Lost at Venue">
             </a>
-          </li>
-          <li class="portfolio__item col-sm-6">
-            <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/mishka" target="_blank">
-              <img src="img/mishka.png" width="500" height="265" alt="Toy Store Mishka">
-              <span class="portfolio__info">Mishka</span>
+            <figcaption class="portfolio__info">
+              <span>Сайт о музыке и путешествиях</span><br>
+              <span class="big">Lost at Venue</span><br>
+              <a class="portfolio__link" href="https://lostatvenue.com" target="_blank">Узнать больше</a>
+            </figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <a href="https://magklax.github.io/prokopyeva/nerds/" target="_blank">
+              <img src="img/nerds@mobile.jpg" alt="Дизайн студия Нёрдс" width="298" height="298">
             </a>
-          </li>
-        </ul>
+            <figcaption class="portfolio__info">
+              <span>Дизайн студия</span><br>
+              <span class="big">Нёрдс</span><br>
+              <a class="portfolio__link" href="https://magklax.github.io/nerds/" target="_blank">Узнать больше</a>
+            </figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <a href="https://magklax.github.io/prokopyeva/mishka" target="_blank">
+              <img src="img/mishka@mobile.jpg" alt="Магазин игрушек Мишка" width="298" height="298">
+            </a>
+            <figcaption class="portfolio__info">
+              <span>Магазин игрушек</span><br>
+              <span class="big">Мишка</span><br>
+              <a class="portfolio__link" href="https://magklax.github.io/prokopyeva/mishka" target="_blank">Узнать больше</a>
+            </figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <a href="https://magklax.github.io/prokopyeva/mishka" target="_blank">
+              <img src="img/mishka@mobile.jpg" alt="Магазин игрушек Мишка" width="298" height="298">
+            </a>
+            <figcaption class="portfolio__info">
+              <span>Магазин игрушек</span><br>
+              <span class="big">Мишка</span><br>
+              <a class="portfolio__link" href="https://magklax.github.io/kotejka/" target="_blank">Узнать больше</a>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
     <section class="section about-me" id="about-me">
       <div class="wrapper">
         <h2 class="title title--section">Обо мне</h2>
-        <ul class="list about-me__list row">
-          <li class="about-me__item col-sm-4">разрабатываю фиксированную, адаптивную, резиновую верстку по PSD макетам с возможностью посадки на CMS</li>
-          <li class="about-me__item col-sm-4">тестирую код валидность и сайт на кроссбраузерность</li>
-          <li class="about-me__item col-sm-4">использую средства автоматизации рабочего процесса и оптимизации кода</li>
-          <li class="about-me__item col-sm-4">следую БЭМ-методологии и стандарту доступности</li>
-          <li class="about-me__item col-sm-4">проверяю соответствие макету c помощью pixel perfect</li>
-          <li class="about-me__item col-sm-4">стремлюсь к получению новых знаний и навыков</li>
+        <ul class="about-me__list block">
+          <li class="about-me__item">Разрабатываю современную и адаптивную верстку сайтов с удобным динамичным интерфейсом</li>
+          <li class="about-me__item">Проверяю валидность разметки, кроссбраузерность сайта и его соответствие макету</li>
+          <li class="about-me__item">Использую средства автоматизации рабочего процесса и техники оптимизации кода для ускорения вебсайта</li>
+          <li class="about-me__item">Следую БЭМ-методологии, принципам семантики и международным стандартам веб-доступности</li>
         </ul>
       </div>
     </section>
     <section class="section skills" id="skills">
+      <h2 class="title title--section">Технологии</h2>
       <div class="wrapper">
-        <h2 class="title title--section">Технологии</h2>
-        <ul class="skills__list list row">
-          <li class="col-sm-3">
+        <div class="skills__slider">
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-html5"></use></svg>
+            <span class="skills__info">HTML 5</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-css"></use></svg>
+            <span class="skills__info">CSS3</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-javascript"></use></svg>
+            <span class="skills__info">JavaScript</span>
+          </div>
+          <div class="skills__item">
             <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-photoshop"></use></svg>
-              <span class="skills__info">Photoshop</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-html-5"></use></svg>
-              <span class="skills__info">HTML 5</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
-              <span class="skills__info">Git</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-css"></use></svg>
-              <span class="skills__info">CSS</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-java"></use></svg>
-              <span class="skills__info">JavaScript</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-gulp"></use></svg>
+              <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-gulp"></use></svg>
               <span class="skills__info">Gulp</span>
             </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-sass"></use></svg>
-              <span class="skills__info">Sass</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-less"></use></svg>
-              <span class="skills__info">Less</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-bootstrap"></use></svg>
-              <span class="skills__info">Bootstrap</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-pug"></use></svg>
-              <span class="skills__info">Pug</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-illustrator"></use></svg>
-              <span class="skills__info">Illustrator</span>
-            </div>
-          </li>
-          <li class="col-sm-3">
-            <div class="skills__item">
-              <svg class="icon" width="52" height="52"><use xlink:href="img/sprite.svg#icon-wordpress"></use></svg>
-              <span class="skills__info">Wordpress</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="section contacts" id="get-in-touch">
-      <div class="wrapper contacts__wrapper">
-        <h2 class="title contacts__title">Контакты</h2>
-        <p class="contacts__text">Вы всегда можете связаться со мной любым удобным для Вас способом:</p>
-        <ul class="contacts__list list">
-          <li class="contacts__item">
-            <a title="Телефон" class="contacts__link">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-phone"></use></svg>
-              <span>+86 136 1293 4750</span>
-            </a>
-          </li>
-          <li class="contacts__item">
-            <a title="Электронная почта" target="_blank" class="contacts__link" href="mailto:ndprokopyeva@gmail.com" target="_blank">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-email"></use></svg>
-              <span>ndprokopyeva@gmail.com</span>
-            </a>
-          </li>
-          <li class="contacts__item">
-            <a title="Wechat ID" target="_blank" class="contacts__link" href="weixin://contacts/profile/magklax">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-wechat"></use></svg>
-              <span>magklax</span>
-            </a>
-          </li>
-          <!-- <li class="contacts__item">
-            <a title="телеграм" target="_blank" class="contacts__link" href="tg://resolve?domain=magklax">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-telegram"></use></svg>
-              <span>@magklax</span>
-            </a>
-          </li>
-          <li class="contacts__item">
-            <a title="мессенджер" target="_blank" href="m.me/magklax" class="contacts__link">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-messenger"></use></svg>
-              <span>magklax</span>
-            </a>
-          </li> -->
-        </ul>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-sass"></use></svg>
+            <span class="skills__info">Sass</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-less"></use></svg>
+            <span class="skills__info">Less</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-illustrator"></use></svg>
+            <span class="skills__info">Illustrator</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-figma"></use></svg>
+            <span class="skills__info">Figma</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-photoshop"></use></svg>
+            <span class="skills__info">Photoshop</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-github"></use></svg>
+            <span class="skills__info">Git</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-bootstrap"></use></svg>
+            <span class="skills__info">Bootstrap</span>
+          </div>
+          <div class="skills__item">
+            <svg class="icon" width="42" height="42"><use xlink:href="img/sprite.svg#icon-wordpress"></use></svg>
+            <span class="skills__info">Wordpress</span>
+          </div>
+        </div>
+        <button id="prev" class="skills__btn skills__btn--prev" aria-label="Предыдущий слайд">
+          <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-btn-prev"></use></svg>
+        </button>
+        <button id="next" class="skills__btn skills__btn--next" aria-label="Следующий слайд">
+          <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-btn-next"></use></svg>
+        </button>
       </div>
     </section>
   </main>
   <footer class="main-footer">
-    <section class="social">
-      <div class="wrapper social__wrapper">
-        <p class="social__text">Давайте дружить!</p>
-        <ul class="social__list">
-          <li>
-            <a title="Мой ГитХаб" href="https://github.com/magklax" class="social__btn" aria-label="GitHub">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-github-f"></use></svg>
-            </a>
-          </li>
-          <li>
-            <a title="Мой Фейсбук" href="https://www.facebook.com/prokopjeva" class="social__btn" aria-label="Facebook">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-fb"></use></svg>
-            </a>
-          </li>
-          <li>
-            <a title="Мой ВКонтакт" href="https://vk.com/nadejdd" class="social__btn" aria-label="Vkontakte">
-              <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-vk"></use></svg>
-            </a>
-          </li>
-        </ul>
+    <div class="main-footer__column">
+      <section class="section contacts" id="get-in-touch">
+        <div class="wrapper">
+          <h2 class="title">Контакты</h2>
+          <p class="contacts__text">Вы всегда можете связаться со мной любым удобным для Вас способом:</p>
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <a title="Телефон" class="contacts__link">
+                <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-phone"></use></svg>
+                <span>+86 136 1293 4750</span>
+              </a>
+            </li>
+            <li class="contacts__item">
+              <a href="#" title="Электронная почта" class="contacts__link" target="_blank">
+                <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-email"></use></svg>
+                <span>ndprokopyeva@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="main-footer__column">
+      <div class="wrapper">
+        <section class="social section">
+         <h2 class="title">Давайте дружить!</h2>
+          <ul class="social__list">
+            <li>
+              <a title="Мой ГитХаб" href="https://github.com/magklax" class="social__btn" aria-label="GitHub">
+                <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-github-f"></use></svg>
+              </a>
+            </li>
+            <li>
+              <a title="Мой Фейсбук" href="https://www.facebook.com/prokopjeva" class="social__btn" aria-label="Facebook">
+                <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-fb"></use></svg>
+              </a>
+            </li>
+            <li>
+              <a title="Мой ВКонтакт" href="https://vk.com/nadejdd" class="social__btn" aria-label="Vkontakte">
+                <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-vk"></use></svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <div class="copyright">
+          <span>all icons from <a href="https://www.flaticon.com/" title="Flaticon">ww.flaticon.com</a> and <a href="https://pngtree.com/free-icon">pngtree.com</a></span>
+        </div>
       </div>
-    </section>
-    <div class="footer__copyright">Icons made by<a href="https://www.flaticon.com/authors/smashicons" title="Smashicons"> Smashicons </a>from <a href="https://www.flaticon.com/" title="Flaticon">ww.flaticon.com</a>&<a href="https://pngtree.com/free-icon">free icons</a> from pngtree.com</div>
+    </div>
   </footer>
-  <a class="top__btn--hide" id="top-btn" href="#top" aria-label="Вверх">
-    <span>
-      <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-top-btn"></use></svg>
-    </span>
+  <a class="top__btn top__btn--hide" id="top-btn" href="#top" aria-label="Вверх">
+    <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-btn-top"></use></svg>
   </a>
-  <script src="js/svg4everybody.min.js"></script>
+  <script src="js/siema.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
