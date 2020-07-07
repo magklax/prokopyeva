@@ -318,10 +318,6 @@ body {
   background-color: #323232;
 }
 
-.main-nav.sticky {
-  background-color: transparent;
-}
-
 .main-nav__list {
   display: block;
   box-sizing: border-box;
@@ -334,10 +330,14 @@ body {
   box-sizing: border-box;
   font-size: 16px;
   color: #dad5cb;
-  transition: 0.3s ease-out;
+  transition: 0.4s ease-out;
 }
 
 @media (max-width: 566px) {
+  .main-nav.sticky {
+    background-color: transparent;
+  }
+
   .main-nav__toggle {
     position: relative;
     width: 50px;
@@ -428,6 +428,15 @@ body {
 }
 
 @media (min-width: 567px) {
+  .main-nav.sticky {
+    transform: translateY(-100%);
+    transition: transform 1s;
+  }
+
+  .main-nav.opened {
+    transform: translateY(0%);
+  }
+
   .main-nav__toggle {
     display: none;
   }

@@ -77,6 +77,18 @@
     }
   });
 
+  document.addEventListener('mousemove', (evt) => {
+    if (mainNav.classList.contains('sticky')) {
+      if (evt.clientY <= mainNavHeight) {
+        mainNav.classList.add('opened');
+      } else {
+        mainNav.classList.remove('opened');
+      }
+    } else {
+      mainNav.classList.remove('opened');
+    }
+  });
+
   const scrollToTop = () => {
     topHeader.scrollIntoView({
       behavior: 'smooth',
