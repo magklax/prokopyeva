@@ -971,14 +971,13 @@ body {
 
 .popup__block {
   display: flex;
-  overflow: scroll;
-  scroll-snap-type: both mandatory;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 }
 
 .popup__item {
   min-width: 100vw;
-  height: 75vh;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   text-align: center;
   position: relative;
 }
