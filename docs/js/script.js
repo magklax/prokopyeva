@@ -146,7 +146,16 @@
   prev.addEventListener('click', () => slider.prev());
   next.addEventListener('click', () => slider.next());
 
-  setInterval(() => slider.next(), 2000)
+  setInterval(() => slider.next(), 2000);
+
+  const portfolio = document.querySelector('#portfolio');
+  const popup = document.querySelector('#popup');
+  const wrapper = document.querySelector('.page-wrapper');
+
+  portfolio.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    popup.classList.add('active');
+    wrapper.classList.add('active');
+  });
 
 })();
-
