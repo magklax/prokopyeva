@@ -156,15 +156,11 @@
   const openPopup = function () {
     popup.classList.add('active');
     wrapper.classList.add('active');
-    topBtn.style.display = 'none';
-    navToggle.style.display = 'none';
   };
 
   const closePopup = function () {
     popup.classList.remove('active');
     wrapper.classList.remove('active');
-    topBtn.style.display = 'block';
-    navToggle.style.display = 'block';
   };
 
   const onPortfolioLinkClick = function (evt) {
