@@ -150,12 +150,35 @@
 
   const portfolio = document.querySelector('#portfolio');
   const popup = document.querySelector('#popup');
+  const popupClose = document.querySelector('#close-popup-btn');
   const wrapper = document.querySelector('.page-wrapper');
 
-  portfolio.addEventListener('click', function (evt) {
-    evt.preventDefault();
+  const openPopup = function () {
     popup.classList.add('active');
     wrapper.classList.add('active');
-  });
+    topBtn.style.display = 'none';
+    navToggle.style.display = 'none';
+  };
 
+  const closePopup = function () {
+    popup.classList.remove('active');
+    wrapper.classList.remove('active');
+    topBtn.style.display = 'block';
+    navToggle.style.display = 'block';
+  };
+
+  const onPortfolioLinkClick = function (evt) {
+    evt.preventDefault();
+
+    openPopup();
+  };
+
+  const onPopupCloseClick = function (evt) {
+    evt.preventDefault();
+
+    closePopup();
+  };
+
+  portfolio.addEventListener('click', onPortfolioLinkClick);
+  popupClose.addEventListener('click', onPopupCloseClick);
 })();

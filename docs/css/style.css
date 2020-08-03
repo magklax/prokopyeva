@@ -981,3 +981,10 @@ body {
   text-align: center;
   position: relative;
 }
+
+.popup__btn {
+  position: absolute;
+  left: 15px;
+  top: -25px;
+  z-index: 9999;
+}
