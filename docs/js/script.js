@@ -152,15 +152,18 @@
   const popup = document.querySelector('#popup');
   const popupClose = document.querySelector('#close-popup-btn');
   const wrapper = document.querySelector('.page-wrapper');
+  const body = document.querySelector('body');
 
   const openPopup = function () {
     popup.classList.add('active');
     wrapper.classList.add('active');
+    body.classList.add('popup-open');
   };
 
   const closePopup = function () {
     popup.classList.remove('active');
     wrapper.classList.remove('active');
+    body.classList.remove('popup-open');
   };
 
   const onPortfolioLinkClick = function (evt) {

@@ -1033,6 +1033,9 @@ body {
     grid-column: 1/3;
     grid-row: 1/2;
   }
+}
 
-
+.popup-open {
+  height: 100vh;
+  overflow-y: hidden;
 }
