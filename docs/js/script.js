@@ -152,18 +152,19 @@
   const popup = document.querySelector('#popup');
   const popupClose = document.querySelector('#close-popup-btn');
   const wrapper = document.querySelector('.page-wrapper');
-  const body = document.querySelector('body');
 
   const openPopup = function () {
     popup.classList.add('active');
     wrapper.classList.add('active');
-    body.classList.add('popup-open');
+    document.body.classList.add('popup-open');
+    document.body.style.top = `-${window.scrollY}px`;
   };
 
   const closePopup = function () {
     popup.classList.remove('active');
     wrapper.classList.remove('active');
-    body.classList.remove('popup-open');
+    document.body.classList.remove('popup-open');
+    document.body.style.top = '';
   };
 
   const onPortfolioLinkClick = function (evt) {

@@ -1036,6 +1036,7 @@ body {
 }
 
 .popup-open {
+  position: fixed;
   height: 100vh;
   overflow-y: hidden;
 }
