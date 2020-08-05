@@ -1,6 +1,6 @@
 'use strict';
 
-(() => {
+(function() {
   const topHeader = document.querySelector('#top')
   const mainNav = topHeader.querySelector('#main-nav');
   const navToggle = topHeader.querySelector('.main-nav__toggle');
@@ -177,4 +177,25 @@
 
   portfolio.addEventListener('click', onPortfolioLinkClick);
   popupClose.addEventListener('click', onPopupCloseClick);
+
+  const popupItem = document.querySelector('#popup-item');
+
+  if (screen.width >= 500) {
+    popup.addEventListener('click', function (evt) {
+      if (evt.target.hasAttribute('src')) {
+
+        const block = evt.target.closest('a');
+        const pictureOne = evt.target.parentElement;
+        const pictureTwo = popupItem.querySelector('picture');
+
+        while (popupItem.firstChild) {
+          popupItem.removeChild(popupItem.firstChild);
+        }
+
+        popupItem.appendChild(pictureOne);
+        block.appendChild(pictureTwo);
+      }
+    });
+  }
+
 })();
