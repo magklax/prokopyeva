@@ -184,22 +184,25 @@
 
   const popupItem = document.querySelector('#popup-item');
 
-  if (screen.width >= 500) {
-    popup.addEventListener('click', function (evt) {
-      if (evt.target.hasAttribute('src')) {
+  const setPicture = function (target) {
 
-        const block = evt.target.closest('a');
-        const pictureOne = evt.target.parentElement;
-        const pictureTwo = popupItem.querySelector('picture');
+    const copy = target.parentElement.cloneNode('true');
 
-        while (popupItem.firstChild) {
-          popupItem.removeChild(popupItem.firstChild);
-        }
+    while (popupItem.firstChild) {
+      popupItem.removeChild(popupItem.firstChild);
+    }
 
-        popupItem.appendChild(pictureOne);
-        block.appendChild(pictureTwo);
-      }
-    });
+    popupItem.appendChild(copy);
+  };
+
+  const onPictureClick = function (evt) {
+    if (evt.target.hasAttribute('src')) {
+      setPicture(evt.target);
+    }
+  }
+
+  if (screen.width >= 768) {
+    popup.addEventListener('click', onPictureClick);
   }
 
 })();
