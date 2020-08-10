@@ -944,7 +944,7 @@ body {
   display: none;
 }
 
-.page-wrapper {
+.page-wrapper.active {
   position: fixed;
   top: 0;
   left: 0;
@@ -965,8 +965,12 @@ body {
   z-index: 9999;
 }
 
-.popup {
+.popup.active {
   display: block;
+}
+
+.popup__block {
+  margin-bottom: 15px;
 }
 
 .popup__btn {
@@ -1015,10 +1019,9 @@ body {
   }
 
   .popup__icon {
-    display: none;
     position: absolute;
     left: calc(50% - 15px);
-    bottom: -50px;
+    bottom: -80px;
     z-index: 9999;
     animation: swipe 1.5s infinite ease-in-out;
   }
@@ -1037,7 +1040,6 @@ body {
     column-gap: 20px;
     row-gap: 20px;
     align-content: space-between;
-    margin-bottom: 15px;
   }
 
   .popup__icon {
