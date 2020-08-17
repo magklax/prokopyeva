@@ -148,16 +148,52 @@
 
   setInterval(() => slider.next(), 2000);
 
+  /* Render Pictures */
+
+  const dataArr = [
+    {
+      name: 'kotejka',
+      desc: 'Отель для котов и кошек Котейка'
+    },
+    {
+      name: 'nimes',
+      desc: 'Магазин джинсовой одежды Nîmes'
+    },
+    {
+      name: 'mishka',
+      desc: 'Магазин игрушек Мишка'
+    },
+    {
+      name: 'lostatvenue',
+      desc: 'Сайт о музыке и путешествиях Lost at Venue'
+    }
+  ];
+
   const portfolio = document.querySelector('#portfolio');
   const popup = document.querySelector('#popup');
+  const popupItem = popup.querySelector('#popup-item');
+  const popupPreviews = popup.querySelectorAll('.popup__preview');
   const popupClose = document.querySelector('#close-popup-btn');
   const wrapper = document.querySelector('.page-wrapper');
 
-  const openPopup = function () {
+  const renderPictures = function (index) {
+    popupItem.querySelector('source').srcset = `img/${dataArr[index].name}-1@tablet.jpg`;
+    popupItem.querySelector('img').src = `img/${dataArr[index].name}-1@mobile.jpg`;
+
+    for (let i = 0; i < 5; i++) {
+      popupPreviews[i].querySelector('source').srcset = `img/${dataArr[index].name}-${i + 1}@tablet.jpg`;
+      popupPreviews[i].querySelector('img').src = `img/${dataArr[index].name}-${i + 1}@mobile.jpg`;
+      popupItem.querySelector('img').alt = `Скриншот ${dataArr[index].desc} ${i + 1}`;
+    }
+  };
+
+  const openPopup = function (index) {
     popup.classList.add('active');
     wrapper.classList.add('active');
     document.body.classList.add('popup-open');
     document.body.style.top = `-${window.scrollY}px`;
+
+    renderPictures(index);
   };
 
   const closePopup = function () {
@@ -170,7 +206,11 @@
   const onPortfolioLinkClick = function (evt) {
     evt.preventDefault();
 
-    openPopup();
+    let target = evt.target.closest('a');
+
+    if (target) {
+      openPopup(target.dataset.index);
+    }
   };
 
   const onPopupCloseClick = function (evt) {
@@ -182,7 +222,7 @@
   portfolio.addEventListener('click', onPortfolioLinkClick);
   popupClose.addEventListener('click', onPopupCloseClick);
 
-  const popupItem = document.querySelector('#popup-item');
+
 
   const setPicture = function (target) {
 
@@ -199,7 +239,7 @@
     if (evt.target.hasAttribute('src')) {
       setPicture(evt.target);
     }
-  }
+  };
 
   if (screen.width >= 768) {
     popup.addEventListener('click', onPictureClick);
