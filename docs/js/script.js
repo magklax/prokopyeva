@@ -1,12 +1,63 @@
 'use strict';
 
 (function() {
+  const dataArr = [
+    {
+      name: 'kotejka',
+      desc: 'Отель для котов и кошек Котейка',
+      link: 'https://magklax.github.io/kotejka/'
+    },
+    {
+      name: 'nimes',
+      desc: 'Магазин джинсовой одежды Nîmes',
+      link: 'https://magklax.github.io/denim/'
+    },
+    {
+      name: 'mishka',
+      desc: 'Магазин игрушек Мишка',
+      link: 'https://magklax.github.io/460793-mishka/'
+    },
+    {
+      name: 'lostatvenue',
+      desc: 'Сайт о музыке и путешествиях Lost at Venue',
+      link: 'https://lostatvenue.com/'
+    },
+    {
+      name: 'keksobooking',
+      desc: 'Сервис размещения объявлений Keksobooking',
+      link: 'https://magklax.github.io/keksobooking/'
+    }
+  ];
+
+    const setSrc = function (name, index) {
+    return `img/${name}-${index}@mobile.jpg`;
+  };
+
+  const setSrcset = function (name, index) {
+    return `img/${name}-${index}@tablet.jpg`;
+  };
+
+  const setAlt = function (name, index) {
+    return `Скриншот ${name} ${index}`;
+  };
+
+/* preload images*/
+  for (let i = 0; i < dataArr.length; i++) {
+    for (let j = 1; j <= 5; j++) {
+      let imgMobile = new Image();
+      let imgTablet = new Image();
+
+      imgMobile.src = setSrc(dataArr[i].name, j);
+      imgTablet.src = setSrcset(dataArr[i].name, j);
+    }
+  }
+
+/* main-nav*/
   const topHeader = document.querySelector('#top')
   const mainNav = topHeader.querySelector('#main-nav');
   const navToggle = topHeader.querySelector('.main-nav__toggle');
   const navMenu = topHeader.querySelector('.main-nav__list');
   const topBtn = document.querySelector('#top-btn')
-
   const mainNavHeight = mainNav.offsetHeight;
 
   topHeader.style.height = mainNavHeight + 'px';
@@ -63,15 +114,17 @@
   navToggle.addEventListener('click', onNavToggleClick);
   navToggle.addEventListener('keydown', onNavToggleEnterPress);
 
+/* scroll */
+
   window.addEventListener('scroll', (evt) => {
     evt.preventDefault();
 
     if (window.pageYOffset > mainNavHeight) {
-      topBtn.classList.remove('top__btn--hide');
+      topBtn.classList.remove('hidden');
       mainNav.classList.add('sticky');
       navToggle.classList.add('sticky');
     } else {
-      topBtn.classList.add('top__btn--hide');
+      topBtn.classList.add('hidden');
       mainNav.classList.remove('sticky');
       navToggle.classList.remove('sticky');
     }
@@ -148,59 +201,51 @@
 
   setInterval(() => slider.next(), 2000);
 
-  /* Render Pictures */
-
-  const dataArr = [
-    {
-      name: 'kotejka',
-      desc: 'Отель для котов и кошек Котейка'
-    },
-    {
-      name: 'nimes',
-      desc: 'Магазин джинсовой одежды Nîmes'
-    },
-    {
-      name: 'mishka',
-      desc: 'Магазин игрушек Мишка'
-    },
-    {
-      name: 'lostatvenue',
-      desc: 'Сайт о музыке и путешествиях Lost at Venue'
-    }
-  ];
+/* open popup */
 
   const portfolio = document.querySelector('#portfolio');
   const popup = document.querySelector('#popup');
-  const popupItem = popup.querySelector('#popup-item');
-  const popupPreviews = popup.querySelectorAll('.popup__preview');
+  const bigPicture = popup.querySelector('#big-picture');
+  const previews = popup.querySelectorAll('.popup__preview');
   const popupClose = document.querySelector('#close-popup-btn');
   const wrapper = document.querySelector('.page-wrapper');
+  const popupLink = document.querySelector('.popup__link');
 
-  const renderPictures = function (index) {
-    popupItem.querySelector('source').srcset = `img/${dataArr[index].name}-1@tablet.jpg`;
-    popupItem.querySelector('img').src = `img/${dataArr[index].name}-1@mobile.jpg`;
+  const createPopup = function (index) {
+    bigPicture.querySelector('source').srcset = setSrcset(dataArr[index].name, 1);
+    bigPicture.querySelector('img').src = setSrc(dataArr[index].name, 1);
 
-    for (let i = 0; i < 5; i++) {
-      popupPreviews[i].querySelector('source').srcset = `img/${dataArr[index].name}-${i + 1}@tablet.jpg`;
-      popupPreviews[i].querySelector('img').src = `img/${dataArr[index].name}-${i + 1}@mobile.jpg`;
-      popupItem.querySelector('img').alt = `Скриншот ${dataArr[index].desc} ${i + 1}`;
+    for (let i = 0; i < dataArr.length; i++) {
+      previews[i].querySelector('source').srcset = setSrcset(dataArr[index].name, i + 1);
+      previews[i].querySelector('img').src = setSrc(dataArr[index].name, i + 1);
+      previews[i].querySelector('img').alt = setAlt(dataArr[index].desc, i + 1);
     }
+
+    popupLink.href = dataArr[index].link;
+
+    openPopup();
   };
 
-  const openPopup = function (index) {
-    popup.classList.add('active');
-    wrapper.classList.add('active');
+  const openPopup = function () {
+    wrapper.classList.remove('hidden');
     document.body.classList.add('popup-open');
     document.body.style.top = `-${window.scrollY}px`;
 
-    renderPictures(index);
-  };
+    document.addEventListener('keydown', onPopupEscPress);
+  }
 
   const closePopup = function () {
-    popup.classList.remove('active');
-    wrapper.classList.remove('active');
+    wrapper.classList.add('hidden');
     document.body.classList.remove('popup-open');
     document.body.style.top = '';
+
+    document.removeEventListener('keydown', onPopupEscPress);
+  };
+
+  const onPopupEscPress = function (evt) {
+    if (evt.keyCode === 27) {
+      closePopup();
+    }
   };
 
   const onPortfolioLinkClick = function (evt) {
@@ -209,7 +254,17 @@
     let target = evt.target.closest('a');
 
     if (target) {
-      openPopup(target.dataset.index);
+      createPopup(target.dataset.index);
+    }
+  };
+
+  const onPortfolioLinkEnterPress = function (evt) {
+    evt.preventDefault();
+
+    let target = evt.target;
+
+    if (target === 'a' && evt.keyCode === 13) {
+      createPopup(target.dataset.index);
     }
   };
 
@@ -219,20 +274,27 @@
     closePopup();
   };
 
+  const onPopupCloseEnterPress = function (evt) {
+    evt.preventDefault();
+
+    if (evt.keyCode === 13) {
+      closePopup();
+    }
+  };
+
   portfolio.addEventListener('click', onPortfolioLinkClick);
+  portfolio.addEventListener('keydown', onPortfolioLinkEnterPress);
   popupClose.addEventListener('click', onPopupCloseClick);
-
-
+  popupClose.addEventListener('keydown', onPopupCloseEnterPress);
 
   const setPicture = function (target) {
-
     const copy = target.parentElement.cloneNode('true');
 
-    while (popupItem.firstChild) {
-      popupItem.removeChild(popupItem.firstChild);
+    while (bigPicture.firstChild) {
+      bigPicture.removeChild(bigPicture.firstChild);
     }
 
-    popupItem.appendChild(copy);
+    bigPicture.appendChild(copy);
   };
 
   const onPictureClick = function (evt) {
@@ -241,8 +303,15 @@
     }
   };
 
-  if (screen.width >= 768) {
+  const onPictureEnterPress = function (evt) {
+    if (evt.target.querySelector('img') && evt.keyCode === 13) {
+      setPicture(evt.target.querySelector('img'));
+    }
+  };
+
+  if (screen.width >= 1050) {
     popup.addEventListener('click', onPictureClick);
+    popup.addEventListener('keydown', onPictureEnterPress);
   }
 
 })();

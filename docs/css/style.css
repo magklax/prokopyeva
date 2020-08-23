@@ -198,6 +198,10 @@ template {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -925,7 +929,7 @@ body {
   text-decoration: none;
 }
 
-.top__btn {
+.top__btn:not(.hidden) {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -940,40 +944,36 @@ body {
   border: 0;
 }
 
-.top__btn--hide {
-  display: none;
-}
-
-.page-wrapper.active {
+.page-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  position: fixed;
   background-color: rgba(50, 50, 50, .7);
   z-index: 999;
   text-align: center;
 }
 
 .popup {
-  display: none;
   position: absolute;
   top: 50%;
-  transform: translate(0, -50%);
+  overflow: auto;
   z-index: 9999;
+  text-align: center;
 }
 
-.popup.active {
-  display: block;
-}
-
-.popup__btn {
+.popup__close {
   position: absolute;
-  top: -40px;
-  right: 10%;
+  top: 20px;
+  right: 20px;
   z-index: 99999;
+  opacity: 0.5;
+}
+
+.popup__close:hover,
+.popup__close:focus {
+  opacity: 1;
 }
 
 .popup__link {
@@ -991,6 +991,10 @@ body {
 }
 
 @media (max-width: 1049px) {
+  .popup {
+    transform: translate(0, -50%);
+  }
+
   .popup__gallery {
     display: flex;
     align-items: center;
@@ -999,7 +1003,7 @@ body {
     margin: 0 10% 15px;
   }
 
-  .popup__item {
+  .popup__preview {
     min-width: 100%;
     margin-right: 10%;
     scroll-snap-align: center;
@@ -1007,14 +1011,14 @@ body {
     position: relative;
   }
 
-  .popup__overlay {
+  .popup__big-picture {
     display: none;
   }
 
   .popup__swipe {
     position: absolute;
     left: calc(50% - 15px);
-    bottom: -50px;
+    bottom: 20px;
     z-index: 9999;
     animation: swipe 1.5s infinite ease-in-out;
   }
@@ -1026,16 +1030,15 @@ body {
 
 @media (min-width: 1050px) {
   .popup {
+    max-height: 95vh;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
   }
 
   .popup__gallery {
     display: grid;
-    height: 75vh;
-    grid-template-columns: minmax(max-content, min-content) minmax(150px, 200px);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: minmax(max-content, min-content) 100px;
+    grid-template-rows: max-content;
     align-content: space-between;
     column-gap: 20px;
     row-gap: 20px;
@@ -1046,25 +1049,25 @@ body {
     display: none;
   }
 
-  .popup__overlay {
+  .popup__big-picture {
     grid-column: 1/2;
     grid-row: 1/6;
   }
 
   .popup__preview {
     grid-column: 2/3;
-    overflow: hidden;
+    opacity: .7;
+  }
+
+  .popup__preview:hover,
+  .popup__preview:focus {
+    opacity: 1;
   }
 
   .popup__picture {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  .popup__btn {
-    right: 0;
-    top: -40px;
   }
 }
 

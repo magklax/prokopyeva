@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <link href="css/style.min.css" rel="stylesheet">
-  <link rel="shortcut icon" href="/img/meerkat.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="img/meerkat.png" type="image/x-icon">
   <link rel="preload" href="fonts/montserrat-300.woff2" as="font">
   <link rel="preload" href="fonts/montserrat-300.woff" as="font">
   <link rel="preload" href="fonts/montserrat-regular.woff2" as="font">
@@ -86,6 +86,17 @@
               <figcaption class="portfolio__info">
                 <span>Сайт о музыке и путешествиях</span><br>
                 <span class="big">Lost at Venue</span><br>
+              </figcaption>
+            </figure>
+          </a>
+          <a class="portfolio__item" href="#" data-index="4">
+            <figure class="portfolio__card">
+              <picture>
+                <img src="img/keksobooking-0.jpg" alt="Сервис размещения объявлений Keksobooking">
+              </picture>
+              <figcaption class="portfolio__info">
+                <span>Сервис размещения объявлений</span><br>
+                <span class="big">Keksobooking</span><br>
               </figcaption>
             </figure>
           </a>
@@ -219,19 +230,16 @@
     </div>
   </footer>
 
-  <a class="top__btn top__btn--hide" id="top-btn" href="#top" aria-label="Вверх">
+  <a class="top__btn hidden" id="top-btn" href="#top" aria-label="Вверх">
     <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-btn-top"></use></svg>
   </a>
-  <div class="page-wrapper">
+  <div class="page-wrapper hidden">
+    <button class="popup__close" id="close-popup-btn" type="button" aria-label="Закрыть окно">
+      <svg width="25" height="25"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+    </button>
     <div id="popup" class="popup">
-      <button class="popup__btn" id="close-popup-btn" type="button" aria-label="Закрыть окно">
-        <svg width="25" height="25"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
-      </button>
-      <div class="popup__swipe">
-        <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-swipe"></use></svg>
-      </div>
       <div class="popup__gallery">
-        <div class="popup__overlay" id="popup-item">
+        <div class="popup__big-picture" id="big-picture">
           <picture>
             <source srcset="img//kotejka-1@tablet.jpg" media="(min-width: 1050px)">
             <img class="popup__picture" src="img//kotejka-1@mobile.jpg" alt="Скриншот Котейка 1">
@@ -268,7 +276,10 @@
           </picture>
         </a>
       </div>
-      <a href="https://magklax.github.io/kotejka/" class="popup__link" target="_blank">Перейти на сайт</a>
+      <a href="#" class="popup__link" target="_blank">Перейти на сайт</a>
+    </div>
+    <div class="popup__swipe">
+      <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-swipe"></use></svg>
     </div>
   </div>
   <script src="js/siema.min.js"></script>
