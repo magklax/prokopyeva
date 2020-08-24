@@ -199,9 +199,11 @@ template {
   display: none;
 }
 
-:focus {
-  outline: 2px dotted #2eb398;
-  outline-offset: -2px;
+@media (min-width: 1050px) {
+  :focus {
+    outline: 2px dotted #2eb398;
+    outline-offset: -2px;
+  }
 }
 
 .visually-hidden:not(:focus):not(:active) {
