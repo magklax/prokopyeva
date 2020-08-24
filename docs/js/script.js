@@ -1,6 +1,27 @@
 'use strict';
 
 (function() {
+  const utils = {
+    isEnterKeycode: function (evt, func, params) {
+      if (evt.keyCode === 13) {
+        func(params);
+      }
+    },
+    isEscKeycode: function (evt, func, params) {
+      if (evt.keyCode === 27) {
+        func(params);
+      }
+    },
+    isTabKeycode: function (evt, func, params) {
+      if (evt.keyCode === 9) {
+        func(params);
+      }
+    },
+    focusOnElem: function (el) {
+      el.focus();
+    }
+  };
+
   const dataArr = [
     {
       name: 'kotejka',
@@ -87,9 +108,7 @@
   };
 
   const onNavMenuEscPress = (evt) => {
-    if (evt.keyCode === 27) {
-      closeNavMenu();
-    }
+    utils.isEscKeycode(evt, closeNavMenu);
   };
 
   const onDocumentClick = (evt) => {
@@ -104,11 +123,9 @@
   };
 
   const onNavToggleEnterPress = (evt) => {
-    if (evt.keyCode === 13) {
-      evt.preventDefault();
+    evt.preventDefault();
 
-      toggleNavMenu();
-    }
+    utils.isEnterKeycode(evt, toggleNavMenu);
   };
 
   navToggle.addEventListener('click', onNavToggleClick);
@@ -156,11 +173,9 @@
   });
 
   topBtn.addEventListener('keydown', (evt) => {
-    if (evt.keyCode === 13) {
-      evt.preventDefault();
+    evt.preventDefault();
 
-      scrollToTop();
-    }
+    utils.isEnterKeycode(evt, scrollToTop);
   });
 
   const aboutMeSection = document.querySelector('#about-me');
@@ -231,8 +246,10 @@
     document.body.classList.add('popup-open');
     document.body.style.top = `-${window.scrollY}px`;
 
+    utils.focusOnElem(previews[0]);
+
     document.addEventListener('keydown', onPopupEscPress);
-  }
+  };
 
   const closePopup = function () {
     wrapper.classList.add('hidden');
@@ -243,9 +260,7 @@
   };
 
   const onPopupEscPress = function (evt) {
-    if (evt.keyCode === 27) {
-      closePopup();
-    }
+    utils.isEscKeycode(evt, closePopup)
   };
 
   const onPortfolioLinkClick = function (evt) {
@@ -259,33 +274,31 @@
   };
 
   const onPortfolioLinkEnterPress = function (evt) {
-    evt.preventDefault();
-
-    let target = evt.target;
-
-    if (target === 'a' && evt.keyCode === 13) {
-      createPopup(target.dataset.index);
+    const target = evt.target;
+    if (target.dataset.index) {
+      utils.isEnterKeycode(evt, function () {
+        utils.isEnterKeycode(evt, createPopup, target.dataset.index);
+      });
     }
   };
 
   const onPopupCloseClick = function (evt) {
-    evt.preventDefault();
-
     closePopup();
   };
 
   const onPopupCloseEnterPress = function (evt) {
-    evt.preventDefault();
+    utils.isEnterKeycode(evt, closePopup)
+  };
 
-    if (evt.keyCode === 13) {
-      closePopup();
-    }
+  const onPopupCloseTabPress = function (evt) {
+    utils.isTabKeycode(evt, utils.focusOnElem, previews[0]);
   };
 
   portfolio.addEventListener('click', onPortfolioLinkClick);
   portfolio.addEventListener('keydown', onPortfolioLinkEnterPress);
   popupClose.addEventListener('click', onPopupCloseClick);
   popupClose.addEventListener('keydown', onPopupCloseEnterPress);
+  popupClose.addEventListener('keydown', onPopupCloseTabPress);
 
   const setPicture = function (target) {
     const copy = target.parentElement.cloneNode('true');
@@ -304,8 +317,9 @@
   };
 
   const onPictureEnterPress = function (evt) {
-    if (evt.target.querySelector('img') && evt.keyCode === 13) {
-      setPicture(evt.target.querySelector('img'));
+    const target = evt.target.querySelector('img');
+    if (target) {
+      utils.isEnterKeycode(evt, setPicture, target);
     }
   };
 

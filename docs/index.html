@@ -29,7 +29,7 @@
   </header>
   <main>
     <section class="section intro">
-      <h1 class="visually-hidden">портфолио HTML-верстальщикa</h1>
+      <h1 class="visually-hidden">Портфолио HTML-верстальщикa</h1>
       <div class="intro__wrapper">
         <div class="intro__column">
           <span class="intro__text">Привет! Меня зовут</span>
@@ -45,7 +45,7 @@
       <div class="wrapper">
         <h2 class="title title--section">Мои работы</h2>
         <div class="portfolio__block block">
-          <a class="portfolio__item" href="#" data-index="0">
+          <a class="portfolio__item" href="#" data-index="0" tabindex="0">
             <figure class="portfolio__card">
               <picture>
                 <img src="img/kotejka-0.jpg" alt="Отель для котов и кошек Котейка">
@@ -233,10 +233,8 @@
   <a class="top__btn hidden" id="top-btn" href="#top" aria-label="Вверх">
     <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-btn-top"></use></svg>
   </a>
+
   <div class="page-wrapper hidden">
-    <button class="popup__close" id="close-popup-btn" type="button" aria-label="Закрыть окно">
-      <svg width="25" height="25"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
-    </button>
     <div id="popup" class="popup">
       <div class="popup__gallery">
         <div class="popup__big-picture" id="big-picture">
@@ -278,6 +276,9 @@
       </div>
       <a href="#" class="popup__link" target="_blank">Перейти на сайт</a>
     </div>
+    <button class="popup__close" id="close-popup-btn" type="button" aria-label="Закрыть окно">
+      <svg width="25" height="25"><use xlink:href="img/sprite.svg#icon-close"></use></svg>
+    </button>
     <div class="popup__swipe">
       <svg width="30" height="30"><use xlink:href="img/sprite.svg#icon-swipe"></use></svg>
     </div>

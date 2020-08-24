@@ -193,13 +193,15 @@ summary {
   display: list-item;
 }
 
+.hidden,
 [hidden],
 template {
   display: none;
 }
 
-.hidden {
-  display: none;
+:focus {
+  outline: 2px dotted #2eb398;
+  outline-offset: -2px;
 }
 
 .visually-hidden:not(:focus):not(:active) {
