@@ -629,7 +629,6 @@ body {
 
 .portfolio__block {
   display: grid;
-  /* grid-template-columns: minmax(auto, 300px); */
   justify-content: center;
   row-gap: 30px;
 }
@@ -685,6 +684,10 @@ body {
 }
 
 @media (min-width: 1050px) {
+  .portfolio__info {
+    font-size: 20px;
+  }
+
   .portfolio__info .big {
     font-family: "Pattaya", "Open Sans Condensed", sans-serif;
     font-size: 24px;
