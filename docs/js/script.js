@@ -47,6 +47,11 @@
       name: 'keksobooking',
       desc: 'Сервис размещения объявлений Keksobooking',
       link: 'https://magklax.github.io/keksobooking/'
+    },
+    {
+      name: 'design',
+      desc: 'Дизайн интерьеров Brume',
+      link: 'https://magklax.github.io/design/'
     }
   ];
 
@@ -230,7 +235,7 @@
     bigPicture.querySelector('source').srcset = setSrcset(dataArr[index].name, 1);
     bigPicture.querySelector('img').src = setSrc(dataArr[index].name, 1);
 
-    for (let i = 0; i < dataArr.length; i++) {
+    for (let i = 0; i < 5; i++) {
       previews[i].querySelector('source').srcset = setSrcset(dataArr[index].name, i + 1);
       previews[i].querySelector('img').src = setSrc(dataArr[index].name, i + 1);
       previews[i].querySelector('img').alt = setAlt(dataArr[index].desc, i + 1);
